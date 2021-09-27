@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import web.DAO.UserDao;
 import web.model.User;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -34,6 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+
     public void deleteUser(long id) {
         userDao.deleteUser(id);
     }
